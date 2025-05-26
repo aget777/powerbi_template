@@ -1,0 +1,43 @@
+relationship 6f8e81d8-5f02-47a0-906b-6a6861ee44cf
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Admin_00_30_Calendar.Дата
+	toColumn: LocalDateTable_a4bac496-280e-4668-a99c-aa00944a2269.Date
+
+relationship df9efef1-1689-4a24-a824-b10ea411c648
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Admin_00_30_Calendar.'Начало месяца'
+	toColumn: LocalDateTable_513eca18-0dc6-4d8b-b019-fd5286568e9a.Date
+
+relationship 9581ec77-c2d7-43e9-8101-77ca5b0cd687
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Admin_00_30_Calendar.'Конец месяца'
+	toColumn: LocalDateTable_88759f10-6c6f-469d-99ef-abee3eac6f6b.Date
+
+relationship a049334d-6802-461a-9313-dd5aceb6297b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Admin_00_30_Calendar.'Начало недели'
+	toColumn: LocalDateTable_e2db93e0-291c-4dee-a565-d334392377d9.Date
+
+relationship 25639396-8eb8-44ed-bd96-89f1b0e9a3ef
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Admin_00_30_Calendar.'Конец недели'
+	toColumn: LocalDateTable_4b52141f-c194-477e-839e-3d72f54d94d7.Date
+
+relationship 5cbe13e7-759d-42ad-8d26-664e474dba21
+	joinOnDateBehavior: datePartOnly
+	fromColumn: last_update_all_reports.min_date
+	toColumn: LocalDateTable_1404d801-69db-4cd7-b15e-eaab0204d513.Date
+
+relationship c22a6aea-dd31-4ba9-a141-b4accc3abb38
+	joinOnDateBehavior: datePartOnly
+	fromColumn: last_update_all_reports.max_date
+	toColumn: LocalDateTable_c9a0f63c-4b62-4519-99f6-8c8c1e6a425b.Date
+
+relationship c14960d7-fb70-790a-eb59-f5453d30f31d
+	fromColumn: YD_05_01_main_without_conv.date
+	toColumn: Admin_00_30_Calendar.Дата
+
+relationship 8cb27c15-db10-58a6-e4e1-151a09577747
+	fromColumn: YD_05_03_main_only_conv.report_item_id
+	toColumn: YD_05_01_main_without_conv.id
+

@@ -1,0 +1,35 @@
+/// Адрес сервера для подключения
+expression server_addres = "ttk.igronik.ru" meta [IsParameterQuery=true, List={"77.105.189.107", "192.168.100.5", "127.0.0.1", "ttk.igronik.ru"}, DefaultValue="ttk.igronik.ru", Type="Text", IsParameterQueryRequired=true]
+	lineageTag: f9b9e466-4163-409f-8a46-68863f85f187
+	queryGroup: 00_Параметры_подключения
+
+	annotation PBI_NavigationStepName = Навигация
+
+	annotation PBI_ResultType = Text
+
+/// Порт сервера
+expression server_port = "3308" meta [IsParameterQuery=true, List={"3306", "33069", "3308"}, DefaultValue="3308", Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 59f6226b-d8d6-41d7-99ff-3cdb954484d4
+	queryGroup: 00_Параметры_подключения
+
+	annotation PBI_NavigationStepName = Навигация
+
+	annotation PBI_ResultType = Text
+
+/// Название базы данных
+expression db_name = "tenant_atb" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 26873f64-c5a6-44dd-bc9a-e5bff46e9209
+	queryGroup: 00_Параметры_подключения
+
+	annotation PBI_NavigationStepName = Навигация
+
+	annotation PBI_ResultType = Text
+
+expression url_logo = "https://drive.google.com/file/d/1r8mL9_xrfqV_fxGGVW1AKD07fUpGSCXa/view?usp=sharing" meta [IsParameterQuery=true, Type="Any", IsParameterQueryRequired=true]
+	lineageTag: fa3612b8-d26e-40d9-a923-60a322199b28
+	queryGroup: 00_Параметры_подключения
+
+	annotation PBI_NavigationStepName = Навигация
+
+	annotation PBI_ResultType = Text
+

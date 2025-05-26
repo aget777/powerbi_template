@@ -1,0 +1,29 @@
+table списокПроцентов
+	lineageTag: 429d3ebb-5239-4cd9-9f43-a6bb79d7381f
+
+	column Id
+		dataType: int64
+		formatString: 0
+		lineageTag: 31d29fc5-4a91-4656-b384-292cef6c3a41
+		summarizeBy: count
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition списокПроцентов = m
+		mode: import
+		queryGroup: 01_04_01_Основные_переключатели
+		source =
+				let
+				    Источник = Table.FromList(
+				Table.SelectRows(переключатель_слева, each [type]="%")[Id],
+				Splitter.SplitByNothing(),
+				type table[Id= Int64.Type]
+				)
+				in
+				    Источник
+
+	annotation PBI_NavigationStepName = Навигация
+
+	annotation PBI_ResultType = Table
+

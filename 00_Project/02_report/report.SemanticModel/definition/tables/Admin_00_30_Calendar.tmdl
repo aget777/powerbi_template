@@ -1,0 +1,283 @@
+table Admin_00_30_Calendar
+	lineageTag: 4e5798a0-ee89-4f0c-90d3-0184da8b0e5a
+
+	column id
+		dataType: double
+		lineageTag: daf63593-eb93-4747-955a-d5339ad69c80
+		summarizeBy: sum
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Дата
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: cef60781-e44f-4b29-a9b4-f17f8580e9f3
+		summarizeBy: none
+		sourceColumn: Дата
+
+		variation Изменение
+			isDefault
+			relationship: 6f8e81d8-5f02-47a0-906b-6a6861ee44cf
+			defaultHierarchy: LocalDateTable_a4bac496-280e-4668-a99c-aa00944a2269.'Иерархия дат'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Год
+		dataType: int64
+		formatString: 0
+		lineageTag: 7d65e4fe-259f-4f9f-83e0-f324a571c107
+		summarizeBy: sum
+		sourceColumn: Год
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Номер квартала'
+		dataType: int64
+		formatString: 0
+		lineageTag: 4b34972a-592a-4588-aa58-0fe41103b473
+		summarizeBy: sum
+		sourceColumn: Номер квартала
+
+		annotation SummarizationSetBy = Automatic
+
+	column Квартал
+		dataType: string
+		lineageTag: 0f27d467-871a-4761-aa64-3bbb481fba4c
+		summarizeBy: none
+		sourceColumn: Квартал
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Номер месяца'
+		dataType: int64
+		formatString: 0
+		lineageTag: 80da2d54-8128-42ff-8d61-946e27ca6091
+		summarizeBy: sum
+		sourceColumn: Номер месяца
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Начало месяца'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: ee56adce-c031-469b-ba57-9d3e2c4e9214
+		summarizeBy: none
+		sourceColumn: Начало месяца
+
+		variation Изменение
+			isDefault
+			relationship: df9efef1-1689-4a24-a824-b10ea411c648
+			defaultHierarchy: LocalDateTable_513eca18-0dc6-4d8b-b019-fd5286568e9a.'Иерархия дат'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Конец месяца'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 47250569-ea99-410f-9516-2cc822cf883c
+		summarizeBy: none
+		sourceColumn: Конец месяца
+
+		variation Изменение
+			isDefault
+			relationship: 9581ec77-c2d7-43e9-8101-77ca5b0cd687
+			defaultHierarchy: LocalDateTable_88759f10-6c6f-469d-99ef-abee3eac6f6b.'Иерархия дат'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'День месяца'
+		dataType: int64
+		formatString: 0
+		lineageTag: 87594f45-1341-4e96-8c03-7e0c037397dc
+		summarizeBy: sum
+		sourceColumn: День месяца
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Код даты'
+		dataType: int64
+		formatString: 0
+		lineageTag: 96d2c876-7817-47a2-8bf5-95cda3cf8f5a
+		summarizeBy: sum
+		sourceColumn: Код даты
+
+		annotation SummarizationSetBy = Automatic
+
+	column Месяц
+		dataType: string
+		lineageTag: 6b7b09e2-6b5c-4d71-943b-3da8fbcd68a3
+		summarizeBy: none
+		sourceColumn: Месяц
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Мес.'
+		dataType: string
+		lineageTag: 02016fe4-14ee-49e9-876c-390f6acc4cb8
+		summarizeBy: none
+		sourceColumn: Мес.
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Месяц года'
+		dataType: string
+		lineageTag: 10ae4fb0-c1b0-4cd2-a188-7d847feb032d
+		summarizeBy: none
+		sourceColumn: Месяц года
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Квартал года'
+		dataType: string
+		lineageTag: 626868ee-0fc9-4f64-bde9-7e039f937bb3
+		summarizeBy: none
+		sourceColumn: Квартал года
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Номер дня недели'
+		dataType: int64
+		formatString: 0
+		lineageTag: 77a8902d-80e2-4be5-ba02-6bf21759758c
+		summarizeBy: sum
+		sourceColumn: Номер дня недели
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'День недели'
+		dataType: string
+		lineageTag: 7184f6fc-27c9-4f5a-b611-c8288fe70b5a
+		summarizeBy: none
+		sourceColumn: День недели
+
+		annotation SummarizationSetBy = Automatic
+
+	column День
+		dataType: string
+		lineageTag: 2f4091db-6a0a-4a6f-9e1c-8860710949b7
+		summarizeBy: none
+		sourceColumn: День
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Начало недели'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: d0292adb-cc72-4419-969a-f7304fa0acc9
+		summarizeBy: none
+		sourceColumn: Начало недели
+
+		variation Изменение
+			isDefault
+			relationship: a049334d-6802-461a-9313-dd5aceb6297b
+			defaultHierarchy: LocalDateTable_e2db93e0-291c-4dee-a565-d334392377d9.'Иерархия дат'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Конец недели'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: ad7f6642-8082-4e4a-83c6-8d694e177be3
+		summarizeBy: none
+		sourceColumn: Конец недели
+
+		variation Изменение
+			isDefault
+			relationship: 25639396-8eb8-44ed-bd96-89f1b0e9a3ef
+			defaultHierarchy: LocalDateTable_4b52141f-c194-477e-839e-3d72f54d94d7.'Иерархия дат'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Номер недели'
+		dataType: int64
+		formatString: 0
+		lineageTag: a4bb0fb9-8fcf-4be5-9b45-723aac225ce2
+		summarizeBy: sum
+		sourceColumn: Номер недели
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Код месяца года'
+		dataType: int64
+		formatString: 0
+		lineageTag: 306143b9-7d60-45e5-9a25-89c50aacf1db
+		summarizeBy: sum
+		sourceColumn: Код месяца года
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Код квартала года'
+		dataType: int64
+		formatString: 0
+		lineageTag: 81109cfe-4b5c-42cb-a31b-18052e379e80
+		summarizeBy: sum
+		sourceColumn: Код квартала года
+
+		annotation SummarizationSetBy = Automatic
+
+	column week_of_year
+		dataType: string
+		lineageTag: b1d37439-c014-489c-aee3-3eff6402ee37
+		summarizeBy: none
+		sourceColumn: week_of_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column week
+		dataType: string
+		lineageTag: 4ca3e7f2-6eca-40c9-aff5-90c0acd7a919
+		summarizeBy: none
+		sourceColumn: week
+
+		annotation SummarizationSetBy = Automatic
+
+	column border_month_week
+		dataType: string
+		lineageTag: d6322a33-7eb3-4cad-a93a-9b39b1caba70
+		summarizeBy: none
+		sourceColumn: border_month_week
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Admin_00_30_Calendar = m
+		mode: import
+		queryGroup: 01_02_Календарь_и_даты
+		source = ```
+				let
+				    Источник = MySQL.Database(server_addres&":"&server_port, db_name, [ReturnSingleDatabase=true, 
+				    Query="select id, date as 'Дата', year as 'Год', quarter_number as 'Номер квартала',
+				quarter as 'Квартал', month_number as 'Номер месяца', start_of_month as 'Начало месяца',
+				end_of_month as 'Конец месяца', day_of_month as 'День месяца', date_code as 'Код даты',
+				month as 'Месяц', month_short as 'Мес.', month_of_year as 'Месяц года', 
+				quarter_of_year as 'Квартал года', day_of_week_number as 'Номер дня недели',
+				day_of_week as 'День недели', day as 'День', start_week as 'Начало недели',
+				end_week as 'Конец недели', week_number as 'Номер недели',
+				month_code as 'Код месяца года', quarter_code as 'Код квартала года',
+				week_of_year, week, border_month_week from Admin_00_30_Calendar", 
+				    CommandTimeout=#duration(0, 0, 10, 0)]),
+				    #"Измененный тип" = Table.TransformColumnTypes(Источник,{{"Дата", type date}, 
+				    {"Начало месяца", type date}, {"Конец месяца", type date}, {"Код даты", Int64.Type}, 
+				    {"Начало недели", type date}, {"Конец недели", type date}, {"Код месяца года", Int64.Type}, {"Код квартала года", Int64.Type}}),
+				    #"Сортированные строки" = Table.Sort(#"Измененный тип",{{"Дата", Order.Ascending}})
+				    
+				in
+				    #"Сортированные строки"
+				```
+
+	annotation PBI_NavigationStepName = Навигация
+
+	annotation PBI_ResultType = Table
+

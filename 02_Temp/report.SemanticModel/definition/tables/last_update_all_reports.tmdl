@@ -1,0 +1,98 @@
+table last_update_all_reports
+	lineageTag: 8d243802-db1c-4d28-bef0-5d87477b79a3
+
+	column account_id
+		dataType: double
+		lineageTag: 6ccc2683-cbf6-49ab-852a-2a24057877b6
+		summarizeBy: sum
+		sourceColumn: account_id
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column report_name
+		dataType: string
+		lineageTag: b7dd4550-4933-42fd-abb9-9c4c7c94cc17
+		summarizeBy: none
+		sourceColumn: report_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column min_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 3ed2ed74-e220-483d-a588-b15117caaa65
+		summarizeBy: none
+		sourceColumn: min_date
+
+		variation Изменение
+			isDefault
+			relationship: 5cbe13e7-759d-42ad-8d26-664e474dba21
+			defaultHierarchy: LocalDateTable_1404d801-69db-4cd7-b15e-eaab0204d513.'Иерархия дат'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column max_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 5b860c67-0b3d-48f4-89bf-ca45e7d59d15
+		summarizeBy: none
+		sourceColumn: max_date
+
+		variation Изменение
+			isDefault
+			relationship: c22a6aea-dd31-4ba9-a141-b4accc3abb38
+			defaultHierarchy: LocalDateTable_c9a0f63c-4b62-4519-99f6-8c8c1e6a425b.'Иерархия дат'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column account_name
+		dataType: string
+		lineageTag: ca4947ae-d16e-4c75-b9fb-3f19a4c11826
+		summarizeBy: none
+		sourceColumn: account_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column source_id
+		dataType: double
+		lineageTag: b966779f-312d-47f9-9b00-b641c74786c7
+		summarizeBy: sum
+		sourceColumn: source_id
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column source_type
+		dataType: string
+		lineageTag: 7cc17c95-d7b1-4f8e-a498-7ab84a9cb1c6
+		summarizeBy: none
+		sourceColumn: source_type
+
+		annotation SummarizationSetBy = Automatic
+
+	partition last_update_all_reports = m
+		mode: import
+		queryGroup: 01_03_Обновление
+		source = ```
+				let
+				    Источник = MySQL.Database(server_addres&":"&server_port, db_name, [ReturnSingleDatabase=true, 
+				    Query="select account_id, table_name as report_name, min_date, max_date, account_name, 
+				    source_type_id as source_id, source_type_sign as source_type from view_min_max_report_dates", 
+				    CommandTimeout=#duration(0, 0, 10, 0)]),
+				    #"Измененный тип" = Table.TransformColumnTypes(Источник,{{"min_date", type date}, {"max_date", type date}})
+				    
+				in
+				    #"Измененный тип"
+				```
+
+	annotation PBI_NavigationStepName = Навигация
+
+	annotation PBI_ResultType = Table
+

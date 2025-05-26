@@ -1,0 +1,33 @@
+table переключатель_тип_конверсий
+	lineageTag: 7efb40f1-3b00-4c54-87e5-d19bfc2905d9
+
+	column conv_type
+		dataType: string
+		lineageTag: fd15e7c5-df41-41f8-bcbc-5b003fefcb5e
+		summarizeBy: none
+		sourceColumn: conv_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Id
+		dataType: int64
+		formatString: 0
+		lineageTag: 2555fe64-1248-470e-bc93-06d7095a3599
+		summarizeBy: count
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition переключатель_тип_конверсий = m
+		mode: import
+		source =
+				let
+				    Источник = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("bYyxDYAwDARXiVKzUZRdQgqatFQMQI0iAhaIsMJ7Iz5UFBSWbd3pnLMYUbXXCMGGgou7GB14nhDrOxrz+xRkTWTIVHaIRk2//G5BlJbkfDoTKvuZKFAQiGklg5VioHhQX6z3Dw==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [conv_type = _t]),
+				    #"Добавлен индекс" = Table.AddIndexColumn(Источник, "Id", 1, 1, Int64.Type)
+				in
+				    #"Добавлен индекс"
+
+	annotation PBI_NavigationStepName = Навигация
+
+	annotation PBI_ResultType = Table
+

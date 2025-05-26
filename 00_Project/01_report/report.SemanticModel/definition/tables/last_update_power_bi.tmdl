@@ -1,0 +1,30 @@
+table last_update_power_bi
+	lineageTag: 73f38864-c3fa-42ba-a129-2a7634b552af
+
+	column last_update
+		dataType: string
+		lineageTag: cfaa02f8-752a-4fdf-858c-cc90dd263ebb
+		summarizeBy: none
+		sourceColumn: last_update
+
+		annotation SummarizationSetBy = Automatic
+
+	partition last_update_power_bi = m
+		mode: import
+		queryGroup: 01_03_Обновление
+		source = ```
+				let
+				    Источник = Table.FromRecords(
+				{[last_update = 
+				DateTimeZone.ToText(
+				   DateTimeZone.SwitchZone(DateTimeZone.FixedLocalNow(), 3), 
+				[Format="dd.MM.yyyy HH:mm:ss", Culture="ru-RU"])]}
+				)
+				in
+				    Источник
+				```
+
+	annotation PBI_NavigationStepName = Навигация
+
+	annotation PBI_ResultType = Table
+

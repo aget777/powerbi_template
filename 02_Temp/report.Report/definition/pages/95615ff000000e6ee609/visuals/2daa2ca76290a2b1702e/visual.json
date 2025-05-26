@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "2daa2ca76290a2b1702e",
+  "position": {
+    "x": 547.81893004115227,
+    "y": 0,
+    "z": 1000,
+    "height": 149.24554183813441,
+    "width": 388.03840877914951,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Меры_01"
+                    }
+                  },
+                  "Property": "05_08_Клики_YD_gender"
+                }
+              },
+              "queryRef": "_Меры_01.05_08_Клики_YD_gender",
+              "nativeQueryRef": "05_08_Клики_YD_gender"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "_Меры_01"
+                  }
+                },
+                "Property": "05_08_Клики_YD_gender"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

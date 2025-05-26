@@ -1,0 +1,27 @@
+table logo_link
+	lineageTag: f2b6e2bf-0004-4153-8641-42bec4926ea5
+
+	column url_logo
+		dataType: string
+		lineageTag: 9fb4fe32-c913-4e8c-bd2b-8d1bf999d382
+		dataCategory: ImageUrl
+		summarizeBy: none
+		sourceColumn: url_logo
+
+		annotation SummarizationSetBy = Automatic
+
+	partition logo_link = m
+		mode: import
+		queryGroup: 01_02_Календарь_и_даты
+		source =
+				let
+				    Источник = #table({"url_logo"}, {{ url_logo}}),
+				    #"Замененное значение" = Table.ReplaceValue(Источник,"https://drive.google.com/file/d/","https://drive.google.com/thumbnail?id=",Replacer.ReplaceText,{"url_logo"}),
+				    #"Замененное значение1" = Table.ReplaceValue(#"Замененное значение","/view?usp=sharing","&sz=w1000",Replacer.ReplaceText,{"url_logo"})
+				in
+				    #"Замененное значение1"
+
+	annotation PBI_NavigationStepName = Навигация
+
+	annotation PBI_ResultType = Table
+

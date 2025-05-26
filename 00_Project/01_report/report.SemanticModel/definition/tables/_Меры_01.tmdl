@@ -1,0 +1,37 @@
+table _Меры_01
+	lineageTag: 38683dc9-60e2-47f5-956c-8210096c5de0
+
+	measure 05_06_Показы_YD_gender = sum('YD_05_01_main_without_conv'[impressions])
+		formatString: 0
+		lineageTag: 948a3a11-810d-4a34-93a5-866b43d0265e
+
+	measure 05_08_Клики_YD_gender = sum('YD_05_01_main_without_conv'[clicks])
+		formatString: 0
+		lineageTag: 75ed8bfc-ee2b-4a8d-9916-81b79c0b5e24
+
+	measure html_logo =
+			
+			"<img src=" & VALUES(logo_link[url_logo]) & " alt='Логотип компании' width='210' height='70'>"
+		lineageTag: 288df985-36dd-45b1-a3d9-37f3956717b6
+
+	column Столбец1
+		dataType: string
+		isHidden
+		lineageTag: 8a3a7991-7704-4dfe-a0c2-3886e94efddc
+		summarizeBy: none
+		sourceColumn: Столбец1
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _Меры_01 = m
+		mode: import
+		source =
+				let
+				    Источник = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Столбец1 = _t])
+				in
+				    Источник
+
+	annotation PBI_ResultType = Table
+

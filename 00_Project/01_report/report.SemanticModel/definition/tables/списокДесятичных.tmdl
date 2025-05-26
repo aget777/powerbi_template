@@ -1,0 +1,29 @@
+table списокДесятичных
+	lineageTag: 63e72bf4-cccb-4836-8745-b5772b7fd46b
+
+	column Id
+		dataType: int64
+		formatString: 0
+		lineageTag: 8b8dcf97-9537-4923-8682-2eafb0ce4e91
+		summarizeBy: count
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition списокДесятичных = m
+		mode: import
+		queryGroup: 01_04_01_Основные_переключатели
+		source =
+				let
+				    Источник = Table.FromList(
+				Table.SelectRows(переключатель_слева, each [type]="float")[Id],
+				Splitter.SplitByNothing(),
+				type table[Id= Int64.Type]
+				)
+				in
+				    Источник
+
+	annotation PBI_NavigationStepName = Навигация
+
+	annotation PBI_ResultType = Table
+

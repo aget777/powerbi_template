@@ -1,0 +1,56 @@
+table переключатель_слева
+	lineageTag: a48605fa-2b82-4e5e-8041-dd5e24be2c85
+
+	column Показатель
+		dataType: string
+		lineageTag: b28d6de2-4772-4785-a68f-aad522a76aef
+		summarizeBy: none
+		sourceColumn: Показатель
+
+		annotation SummarizationSetBy = Automatic
+
+	column type
+		dataType: string
+		lineageTag: 44d7793e-d091-4af5-8a8b-cb7eb5cfc870
+		summarizeBy: none
+		sourceColumn: type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Id
+		dataType: int64
+		formatString: 0
+		lineageTag: 423c840c-d863-4efd-9ca5-86fa30d2c5b5
+		summarizeBy: count
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column conv_type
+		dataType: string
+		lineageTag: cca56edc-f974-4cfc-8c16-ea2cf073d056
+		summarizeBy: none
+		sourceColumn: conv_type
+
+		annotation SummarizationSetBy = Automatic
+
+	partition переключатель_слева = m
+		mode: import
+		queryGroup: 01_04_01_Основные_переключатели
+		source = ```
+				let
+				    Источник = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("nZJBSwJREMe/ymPBm4kF0jn21MESkS7iIchAiIyUuqqlQQpBdQpSI6jruri5uO76FWa+UfPerut7T03oIOvO/GfnP7+ZYtEoVK/YkZE0avVro5QsGvAMLkzAxRZ2KVy5rIfhAQTYBAdbPAUOeODK6XcIwMYuOGybso9tsMHClhz8pkCT1AH9LEqcX1RPl41hChZMFD9mIc8S9J4IRW+8C8nkTqamCMCnxg42yJ2renrllrlh+CHDPj0dhp1V718i5Cwmtdej0lTzv3kMxehtsjdWJ8yZCggzd6C9Z1VQH9hIUTds8E+lJHeCaLzfF/DwDkaU9MGK9ORvxtnTf43+kD42EmvxQ0bYk6n2KREtRw5HVqh2kmLLDeofV2WLHa4V9WGEjwRvxkKXeB9r48kG6ihM2CUtXyh2ZOb8GLwdIhQwfnTiHjk2Wz8KsRY5KNzgAzmZKjbzx9lDmcCnuCI+tYc98ONLgCnBn/PzX72EcNLxoi2LFqQX4dMaQIJJ8x+F4gBcotvlThlHt730pHJWrrKbSvm2xvYy0gxyIpPekNjfVLGbjktKvw==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Показатель = _t, #"type" = _t]),
+				    #"Добавлен индекс" = Table.AddIndexColumn(Источник, "Id", 0, 1, Int64.Type),
+				    #"Добавлен пользовательский объект" = Table.AddColumn(#"Добавлен индекс", "conv_type", each if List.Max(переключатель_тип_конверсий[Id])=1 
+				then if List.Contains({1, 4, 5, 6, 7, 8, 9, 10,  14, 15, 16, 17, 21}, [Id]) 
+				then 1 else 0
+				else 1),
+				    #"Измененный тип" = Table.TransformColumnTypes(#"Добавлен пользовательский объект",{{"conv_type", type text}})
+				in
+				    #"Измененный тип"
+				```
+
+	annotation PBI_NavigationStepName = Навигация
+
+	annotation PBI_ResultType = Table
+

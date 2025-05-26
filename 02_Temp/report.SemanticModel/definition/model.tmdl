@@ -1,0 +1,59 @@
+model Model
+	culture: ru-RU
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: ru-RU
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+queryGroup 00_Параметры_подключения
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 01_02_Календарь_и_даты
+
+	annotation PBI_QueryGroupOrder = 1
+
+queryGroup 01_03_Обновление
+
+	annotation PBI_QueryGroupOrder = 2
+
+queryGroup 01_04_01_Основные_переключатели
+
+	annotation PBI_QueryGroupOrder = 3
+
+queryGroup 05_05_Пол_Возраст_Устройство
+
+	annotation PBI_QueryGroupOrder = 4
+
+annotation PBI_QueryOrder = ["server_addres","server_port","db_name","url_logo","Admin_00_30_Calendar","last_update_all_reports","last_update_power_bi","переключатель_слева","переключатель_справа","списокДесятичных","списокПроцентов","YD_05_01_main_without_conv","YD_05_03_main_only_conv","переключатель_тип_конверсий","_Меры_01","logo_link"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.143.878.0 (25.05)+b20aa3b866ec1b70879135a4e60e4b1301c75b21
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Admin_00_30_Calendar
+ref table DateTableTemplate_5836c5af-2686-49d2-baf4-48734b40f585
+ref table LocalDateTable_a4bac496-280e-4668-a99c-aa00944a2269
+ref table LocalDateTable_513eca18-0dc6-4d8b-b019-fd5286568e9a
+ref table LocalDateTable_88759f10-6c6f-469d-99ef-abee3eac6f6b
+ref table LocalDateTable_e2db93e0-291c-4dee-a565-d334392377d9
+ref table LocalDateTable_4b52141f-c194-477e-839e-3d72f54d94d7
+ref table last_update_all_reports
+ref table LocalDateTable_1404d801-69db-4cd7-b15e-eaab0204d513
+ref table LocalDateTable_c9a0f63c-4b62-4519-99f6-8c8c1e6a425b
+ref table last_update_power_bi
+ref table переключатель_слева
+ref table переключатель_справа
+ref table списокДесятичных
+ref table списокПроцентов
+ref table YD_05_01_main_without_conv
+ref table YD_05_03_main_only_conv
+ref table переключатель_тип_конверсий
+ref table _Меры_01
+ref table logo_link
+
+ref cultureInfo ru-RU
+

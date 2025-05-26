@@ -1,0 +1,178 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 584.28571428571433,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 885.71428571428578,
+            "y": 0
+          },
+          "nodeIndex": "переключатель_слева",
+          "nodeLineageTag": "a48605fa-2b82-4e5e-8041-dd5e24be2c85",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 891.14285714285722,
+            "y": 196.28571428571428
+          },
+          "nodeIndex": "переключатель_справа",
+          "nodeLineageTag": "ecce7b17-5961-493c-a63f-1e41a8a2753e",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1202.2857142857142,
+            "y": 287.42857142857144
+          },
+          "nodeIndex": "переключатель_тип_конверсий",
+          "nodeLineageTag": "7efb40f1-3b00-4c54-87e5-d19bfc2905d9",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1190.5714285714284,
+            "y": 0
+          },
+          "nodeIndex": "списокДесятичных",
+          "nodeLineageTag": "63e72bf4-cccb-4836-8745-b5772b7fd46b",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1194.5714285714287,
+            "y": 165.14285714285714
+          },
+          "nodeIndex": "списокПроцентов",
+          "nodeLineageTag": "429d3ebb-5239-4cd9-9f43-a6bb79d7381f",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "nodeIndex": "Admin_00_30_Calendar",
+          "nodeLineageTag": "4e5798a0-ee89-4f0c-90d3-0184da8b0e5a",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1742.5714285714287,
+            "y": 0
+          },
+          "nodeIndex": "last_update_all_reports",
+          "nodeLineageTag": "8d243802-db1c-4d28-bef0-5d87477b79a3",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1450.8571428571429,
+            "y": 155.14285714285714
+          },
+          "nodeIndex": "last_update_power_bi",
+          "nodeLineageTag": "73f38864-c3fa-42ba-a129-2a7634b552af",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 321.99999999999977,
+            "y": 0
+          },
+          "nodeIndex": "YD_05_01_main_without_conv",
+          "nodeLineageTag": "092e6c3a-023d-49af-a93a-3336e32b0980",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 610.28571428571422,
+            "y": 0
+          },
+          "nodeIndex": "YD_05_03_main_only_conv",
+          "nodeLineageTag": "7915ee3a-31e1-4e43-be7b-a87c683b6250",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1440,
+            "y": 0
+          },
+          "nodeIndex": "_Меры_01",
+          "nodeLineageTag": "38683dc9-60e2-47f5-956c-8210096c5de0",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2026.5714285714287,
+            "y": 155.71428571428572
+          },
+          "nodeIndex": "logo_link",
+          "nodeLineageTag": "f2b6e2bf-0004-4153-8641-42bec4926ea5",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Все таблицы",
+      "zoomValue": 70,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Все таблицы",
+  "defaultDiagram": "Все таблицы"
+}
