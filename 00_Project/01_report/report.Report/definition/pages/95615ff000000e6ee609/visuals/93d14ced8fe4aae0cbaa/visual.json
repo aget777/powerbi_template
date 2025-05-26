@@ -1,19 +1,19 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
-  "name": "a0e0935cdb0630cb5970",
+  "name": "93d14ced8fe4aae0cbaa",
   "position": {
     "x": 0,
-    "y": 256.32,
-    "z": 2000,
-    "height": 463.68,
-    "width": 669.6,
-    "tabOrder": 2000
+    "y": 0,
+    "z": 3003,
+    "height": 114.41340782122906,
+    "width": 375.41899441340786,
+    "tabOrder": 3003
   },
   "visual": {
-    "visualType": "lineChart",
+    "visualType": "slicer",
     "query": {
       "queryState": {
-        "Category": {
+        "Values": {
           "projections": [
             {
               "field": {
@@ -29,24 +29,6 @@
               "queryRef": "Admin_00_30_Calendar.Дата",
               "nativeQueryRef": "Дата",
               "active": true
-            }
-          ]
-        },
-        "Y": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Меры_01"
-                    }
-                  },
-                  "Property": "05_06_Показы_YD_gender"
-                }
-              },
-              "queryRef": "_Меры_01.05_06_Показы_YD_gender",
-              "nativeQueryRef": "05_06_Показы_YD_gender"
             }
           ]
         }
@@ -69,6 +51,21 @@
         ],
         "isDefaultSort": true
       }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Between'"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "drillFilterOtherVisuals": true
   }

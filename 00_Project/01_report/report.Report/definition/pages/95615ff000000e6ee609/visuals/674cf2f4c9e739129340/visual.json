@@ -1,19 +1,38 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
-  "name": "2daa2ca76290a2b1702e",
+  "name": "674cf2f4c9e739129340",
   "position": {
-    "x": 679.68000000000006,
-    "y": 0,
-    "z": 1000,
-    "height": 149.76000000000002,
-    "width": 256.32,
-    "tabOrder": 1000
+    "x": 771,
+    "y": 282,
+    "z": 3002,
+    "height": 438,
+    "width": 509,
+    "tabOrder": 3002
   },
   "visual": {
-    "visualType": "card",
+    "visualType": "columnChart",
     "query": {
       "queryState": {
-        "Values": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Admin_00_30_Calendar"
+                    }
+                  },
+                  "Property": "Месяц года"
+                }
+              },
+              "queryRef": "Admin_00_30_Calendar.Месяц года",
+              "nativeQueryRef": "Месяц года",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
           "projections": [
             {
               "field": {
@@ -23,11 +42,11 @@
                       "Entity": "_Меры_01"
                     }
                   },
-                  "Property": "05_08_Клики_YD_gender"
+                  "Property": "05_11_costs"
                 }
               },
-              "queryRef": "_Меры_01.05_08_Клики_YD_gender",
-              "nativeQueryRef": "05_08_Клики_YD_gender"
+              "queryRef": "_Меры_01.05_11_costs",
+              "nativeQueryRef": "05_11_costs"
             }
           ]
         }
@@ -42,7 +61,7 @@
                     "Entity": "_Меры_01"
                   }
                 },
-                "Property": "05_08_Клики_YD_gender"
+                "Property": "05_11_costs"
               }
             },
             "direction": "Descending"

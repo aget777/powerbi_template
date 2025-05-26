@@ -133,6 +133,9 @@ table Admin_00_30_Calendar
 		lineageTag: 10ae4fb0-c1b0-4cd2-a188-7d847feb032d
 		summarizeBy: none
 		sourceColumn: Месяц года
+		sortByColumn: 'Начало месяца'
+
+		changedProperty = SortByColumn
 
 		annotation SummarizationSetBy = Automatic
 
