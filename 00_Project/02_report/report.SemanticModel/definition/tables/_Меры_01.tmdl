@@ -14,6 +14,11 @@ table _Меры_01
 			"<img src=" & VALUES(logo_link[url_logo]) & " alt='Логотип компании' width='210' height='70'>"
 		lineageTag: 288df985-36dd-45b1-a3d9-37f3956717b6
 
+	measure 05_11_costs = sum('YD_05_01_main_without_conv'[costs_nds])
+		lineageTag: d993be81-8270-4988-b351-9ad9b44cc100
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column Столбец1
 		dataType: string
 		isHidden
