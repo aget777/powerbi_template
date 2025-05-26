@@ -1,0 +1,62 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "1de9827c59a09448e4e2",
+  "position": {
+    "x": 626.4,
+    "y": 272.16,
+    "z": 1,
+    "height": 430.56,
+    "width": 586.08,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "treemap",
+    "query": {
+      "queryState": {
+        "Group": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "YD_05_01_main_without_conv"
+                    }
+                  },
+                  "Property": "gender"
+                }
+              },
+              "queryRef": "YD_05_01_main_without_conv.gender",
+              "nativeQueryRef": "gender",
+              "active": true
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "YD_05_01_main_without_conv"
+                        }
+                      },
+                      "Property": "age"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(YD_05_01_main_without_conv.age)",
+              "nativeQueryRef": "Количество age"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
