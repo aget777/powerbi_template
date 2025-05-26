@@ -1,0 +1,75 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "46b7cdf914c96c90cb89",
+  "position": {
+    "x": 24.48,
+    "y": 262.08,
+    "z": 0,
+    "height": 394.56,
+    "width": 522.72,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "pieChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "YD_05_01_main_without_conv"
+                    }
+                  },
+                  "Property": "device"
+                }
+              },
+              "queryRef": "YD_05_01_main_without_conv.device",
+              "nativeQueryRef": "device",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Меры_01"
+                    }
+                  },
+                  "Property": "05_06_Показы_YD_gender"
+                }
+              },
+              "queryRef": "_Меры_01.05_06_Показы_YD_gender",
+              "nativeQueryRef": "05_06_Показы_YD_gender"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "_Меры_01"
+                  }
+                },
+                "Property": "05_06_Показы_YD_gender"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

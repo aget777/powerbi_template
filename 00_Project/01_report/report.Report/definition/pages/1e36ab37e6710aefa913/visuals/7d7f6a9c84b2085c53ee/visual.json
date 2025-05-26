@@ -1,0 +1,57 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "7d7f6a9c84b2085c53ee",
+  "position": {
+    "x": 684,
+    "y": 247.68,
+    "z": 1,
+    "height": 394.56,
+    "width": 522.72,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "treemap",
+    "query": {
+      "queryState": {
+        "Group": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "YD_05_01_main_without_conv"
+                    }
+                  },
+                  "Property": "age"
+                }
+              },
+              "queryRef": "YD_05_01_main_without_conv.age",
+              "nativeQueryRef": "age",
+              "active": true
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Меры_01"
+                    }
+                  },
+                  "Property": "05_11_costs"
+                }
+              },
+              "queryRef": "_Меры_01.05_11_costs",
+              "nativeQueryRef": "05_11_costs"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
