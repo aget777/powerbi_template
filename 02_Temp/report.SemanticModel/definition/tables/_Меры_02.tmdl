@@ -1,0 +1,33 @@
+table _Меры_02
+	lineageTag: f735619e-a2a5-4359-9083-afffda52fa6b
+
+	measure 07_05_Imp_place = sum('YD_07_01_place_without_conv'[impressions])
+		formatString: 0
+		lineageTag: 8316ed26-c508-4fe8-b409-6c64164167e7
+
+	measure 07_10_Conv_place = SUM('YD_07_03_place_only_conv'[value])
+		formatString: 0
+		displayFolder: Conv
+		lineageTag: 3e722c23-946d-492c-bb40-5a0982dc9699
+
+	column Столбец1
+		dataType: string
+		isHidden
+		lineageTag: 37b4d90c-939f-4a8d-bb49-f9861e0441e4
+		summarizeBy: none
+		sourceColumn: Столбец1
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _Меры_02 = m
+		mode: import
+		source =
+				let
+				    Источник = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Столбец1 = _t])
+				in
+				    Источник
+
+	annotation PBI_ResultType = Table
+

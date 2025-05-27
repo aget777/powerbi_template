@@ -1,0 +1,52 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "49b6cbf2d8404c2c904a",
+  "position": {
+    "x": 639.36,
+    "y": 233.28,
+    "z": 0,
+    "height": 462.24,
+    "width": 492.48,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "YD_07_01_place_without_conv"
+                    }
+                  },
+                  "Property": "placement"
+                }
+              },
+              "queryRef": "YD_07_01_place_without_conv.placement",
+              "nativeQueryRef": "placement"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Меры_02"
+                    }
+                  },
+                  "Property": "07_10_Conv_place"
+                }
+              },
+              "queryRef": "_Меры_02.07_10_Conv_place",
+              "nativeQueryRef": "07_10_Conv_place"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
