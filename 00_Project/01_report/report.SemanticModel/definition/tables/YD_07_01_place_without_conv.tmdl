@@ -1,0 +1,174 @@
+table YD_07_01_place_without_conv
+	lineageTag: 97c7b727-9291-4956-92b3-cf52911cee5b
+
+	column id
+		dataType: double
+		lineageTag: 7feb10b3-0e64-48e8-9796-39045cf9bfc1
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c2b85367-9d44-42c9-bca9-63ca3fe2f04e
+		summarizeBy: none
+		sourceColumn: date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column account_id
+		dataType: double
+		lineageTag: ddd4e823-174c-4101-8ae8-83cb4a37c070
+		summarizeBy: sum
+		sourceColumn: account_id
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column campaign_id
+		dataType: int64
+		formatString: 0
+		lineageTag: fa291872-2e08-4afe-aa58-fc5726f70416
+		summarizeBy: sum
+		sourceColumn: campaign_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column placement
+		dataType: string
+		lineageTag: 625b7d4d-402c-49b3-a0c8-e6fc0c1902f5
+		summarizeBy: none
+		sourceColumn: placement
+
+		annotation SummarizationSetBy = Automatic
+
+	column impressions
+		dataType: int64
+		formatString: 0
+		lineageTag: cd5e155a-ae0b-42be-ba10-22cef390b65f
+		summarizeBy: sum
+		sourceColumn: impressions
+
+		annotation SummarizationSetBy = Automatic
+
+	column clicks
+		dataType: int64
+		formatString: 0
+		lineageTag: 17da5660-fb96-4c51-90f4-a3901dcd7a76
+		summarizeBy: sum
+		sourceColumn: clicks
+
+		annotation SummarizationSetBy = Automatic
+
+	column costs_nds
+		dataType: double
+		lineageTag: 111e2b2a-ec56-4ba0-a1a2-2b7e6ac2f788
+		summarizeBy: sum
+		sourceColumn: costs_nds
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column bounces
+		dataType: int64
+		formatString: 0
+		lineageTag: 42ebebd8-72b9-43bf-952e-93caa22be53d
+		summarizeBy: sum
+		sourceColumn: bounces
+
+		annotation SummarizationSetBy = Automatic
+
+	column sessions
+		dataType: int64
+		formatString: 0
+		lineageTag: 0f016694-ebba-4f97-9dee-eff194d76702
+		summarizeBy: sum
+		sourceColumn: sessions
+
+		annotation SummarizationSetBy = Automatic
+
+	column costs_without_nds
+		dataType: double
+		lineageTag: 53e0db2e-a5a3-426a-9b31-2a968d5d7d5c
+		summarizeBy: sum
+		sourceColumn: costs_without_nds
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column source_type_id
+		dataType: double
+		lineageTag: 534c6689-d1b0-41ef-9b9e-764e41416492
+		summarizeBy: sum
+		sourceColumn: source_type_id
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column id_key_camp
+		dataType: string
+		lineageTag: 98c4a61d-80e7-45dc-928d-462f6d83ef0f
+		summarizeBy: none
+		sourceColumn: id_key_camp
+
+		annotation SummarizationSetBy = Automatic
+
+	column ak
+		dataType: double
+		lineageTag: 92387195-47c6-471c-a79a-9e0eae1d267d
+		summarizeBy: sum
+		sourceColumn: ak
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column costs_without_nds_ak
+		dataType: double
+		lineageTag: 06822c82-82be-4c2c-a77a-c3e26d7c6985
+		summarizeBy: sum
+		sourceColumn: costs_without_nds_ak
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column costs_nds_ak
+		dataType: double
+		lineageTag: a251d01b-2bab-4e6b-9955-ec7bfca7443c
+		summarizeBy: sum
+		sourceColumn: costs_nds_ak
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition YD_07_01_place_without_conv = m
+		mode: import
+		queryGroup: 05_05_Пол_Возраст_Устройство
+		source = ```
+				let
+				    Источник = MySQL.Database(server_addres&":"&server_port, db_name, [ReturnSingleDatabase=true, 
+				    Query="select *
+				            from YD_07_01_place_without_conv", 
+				    CommandTimeout=#duration(0, 0, 10, 0)]),
+				    #"Измененный тип" = Table.TransformColumnTypes(Источник,{{"date", type date}})
+				    
+				in
+				    #"Измененный тип"
+				```
+
+	annotation PBI_NavigationStepName = Навигация
+
+	annotation PBI_ResultType = Table
+

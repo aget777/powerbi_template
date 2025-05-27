@@ -41,3 +41,11 @@ relationship 8cb27c15-db10-58a6-e4e1-151a09577747
 	fromColumn: YD_05_03_main_only_conv.report_item_id
 	toColumn: YD_05_01_main_without_conv.id
 
+relationship 6fd11227-fa7f-0011-d5d8-10714be4935d
+	fromColumn: YD_07_01_place_without_conv.date
+	toColumn: Admin_00_30_Calendar.Дата
+
+relationship ab015a6c-9382-d8b1-9cdc-4ebf446a6db8
+	fromColumn: YD_07_03_place_only_conv.report_item_id
+	toColumn: YD_07_01_place_without_conv.id
+

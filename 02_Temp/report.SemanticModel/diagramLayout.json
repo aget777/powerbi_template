@@ -4,7 +4,7 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 584.28571428571433,
+        "x": 751.71428571428555,
         "y": 0
       },
       "nodes": [
@@ -158,6 +158,45 @@
           },
           "nodeIndex": "logo_link",
           "nodeLineageTag": "f2b6e2bf-0004-4153-8641-42bec4926ea5",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 316.285714285714,
+            "y": 323.4285714285715
+          },
+          "nodeIndex": "YD_07_01_place_without_conv",
+          "nodeLineageTag": "97c7b727-9291-4956-92b3-cf52911cee5b",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 591.71428571428555,
+            "y": 333.14285714285711
+          },
+          "nodeIndex": "YD_07_03_place_only_conv",
+          "nodeLineageTag": "2d07ba68-de1f-4154-b460-da3579f682b3",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2310.5714285714284,
+            "y": 259.71428571428578
+          },
+          "nodeIndex": "_Меры_02",
+          "nodeLineageTag": "f735619e-a2a5-4359-9083-afffda52fa6b",
           "size": {
             "height": 104,
             "width": 234
